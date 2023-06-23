@@ -1,0 +1,317 @@
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 16%;
+    background-color: black;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: coloumn;
+
+}
+
+#dash {
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 14px;
+}
+
+#sub {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#lib {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#his {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#watch {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#like {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#trend {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#set {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#rep {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#help {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#send {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#about {
+    margin-top: 20px;
+    font-size: 20px;
+    color: lightgrey;
+}
+
+.you {
+    margin-top: 20px;
+    color: white;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+
+
+
+.side-bar {
+    border: 1px soli white;
+    height: 400vh;
+    width: 16%;
+    background-color: black;
+
+
+}
+
+.fa-solid {
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+}
+
+
+.fa-book {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-film {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-clock {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-fire {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-cog {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-question-circle {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-flag {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-newspaper {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-comment {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-plus-circle {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-youtube {
+    color: red;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.hr {
+    color: black;
+}
+
+
+/* Styles for mobile devices */
+@media only screen and (max-width: 767px) {
+    .side-bar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .dashboard {
+        flex-direction: column;
+    }
+
+    #dash,
+    #sub,
+    #lib,
+    #his,
+    #watch,
+    #like,
+    #trend,
+    #set,
+    #rep,
+    #help,
+    #send,
+    #about,
+    .you,
+    .fa-solid,
+    .fa-book,
+    .fa-film,
+    .fa-clock,
+    .fa-fire,
+    .fa-cog,
+    .fa-question-circle,
+    .fa-flag,
+    .fa-newspaper,
+    .fa-comment,
+    .fa-plus-circle,
+    .fa-youtube {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Styles for laptop devices */
+@media only screen and (min-width: 768px) {
+    .side-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 16%;
+        background-color: black;
+        overflow-y: auto;
+        z-index: 1;
+    }
+
+    .dashboard {
+        flex-direction: column;
+    }
+
+    #dash,
+    #sub,
+    #lib,
+    #his,
+    #watch,
+    #like,
+    #trend,
+    #set,
+    #rep,
+    #help,
+    #send,
+    #about,
+    .you,
+    .fa-solid,
+    .fa-book,
+    .fa-film,
+    .fa-clock,
+    .fa-fire,
+    .fa-cog,
+    .fa-question-circle,
+    .fa-flag,
+    .fa-newspaper,
+    .fa-comment,
+    .fa-plus-circle,
+    .fa-youtube {
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+}

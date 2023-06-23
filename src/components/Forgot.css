@@ -1,0 +1,57 @@
+.forgot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.for {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+}
+
+.mb-3 {
+  margin-top: 30px;
+}
+
+.con {
+  width: 40% !important;
+
+}
+
+#email {
+  width: 150%;
+}
+
+
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 767px) {
+  .con {
+    width: 100% !important;
+  }
+
+  #email {
+    width: 100%;
+  }
+}
+
+/* Media queries for laptop devices */
+@media only screen and (min-width: 768px) {
+  .con {
+    width: 40% !important;
+  }
+
+  #email {
+    width: 150%;
+  }
+}

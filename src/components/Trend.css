@@ -1,0 +1,64 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.video-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.video-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.video-details {
+  font-size: 14px;
+  color: #888888;
+}
+
+.trend {
+  color: white;
+}
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 767px) {
+  .login-wrapper {
+    padding: 10px;
+  }
+
+  .name,
+  .email,
+  .password {
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+  }
+}
+
+/* Media queries for laptop devices */
+@media only screen and (min-width: 768px) {
+  .login-wrapper {
+    padding: 20px;
+  }
+
+  .name,
+  .email,
+  .password {
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    font-size: 16px;
+  }
+}
