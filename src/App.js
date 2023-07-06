@@ -12,7 +12,7 @@ import Movies from './components/Movies';
 import Forgot from './components/Forgot';
 import Password from './components/Password';
 export const url = "http://localhost:8000"
-
+// export const url = "https://media-application-backend.onrender.com/"
 function App() {
   return (
     <BrowserRouter>

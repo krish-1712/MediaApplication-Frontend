@@ -1,33 +1,31 @@
-import { useNavigate } from "react-router-dom";
 import './Dashboard.css'
-
+import { Link } from 'react-router-dom';
 
 const Dashboard = ({ children }) => {
-  const history = useNavigate();
   return (
 
     <div className='dashboard'>
       <div className='side-bar'>
         <h4>
-          <p className="you"> <i className="fab fa-youtube"></i>   YouTube</p><br></br>
+          <p className="you"> <i className="fab fa-youtube"></i>YouTube</p><br></br>
           <i className="fa-solid fa-house"></i>
-          <button onClick={() => history("/home")} id="dash">Home</button><br></br>
+          <Link to="/home" id="dash">Home</Link><br></br>
         </h4>
         <hr className="hr"></hr>
         <div className="mute">
-          <i className="fa-solid fa-film"></i>
-          <button id="his" onClick={(e) => history("/movies")}>Movies</button><br></br>
+          <i className="fa-solid fa-film"></i>   <Link to="/movies" id="his">Movies</Link><br></br>
           <i className="fas fa-newspaper"></i>
-          <button id="like" onClick={(e) => history("/news")}>News</button><br></br>
+          <Link to="/news" id="like">News</Link><br></br>
           <hr></hr>
         </div>
         <i className="fas fa-fire"></i>
-        <button id="trend" onClick={(e) => history("/trend")}>Trending</button><br></br>
+        <Link to="/trend" id="trend">Trending</Link><br></br>
         <hr ></hr>
-        <i class="fas fa-flag"></i>
-        <button id="help" onClick={(e) => history("/help")}>Help</button><br></br>
+        <i className="fas fa-flag"></i>
+
+        <Link to="/help" id="help">Help</Link><br></br>
         <i className="far fa-comment"></i>
-        <button id="send" onClick={(e) => history("/feedback")}>Send FeedBack</button><br></br>
+        <Link to="/feedback" id="send">Send Feedback</Link><br></br>
         <hr></hr>
         <p id="about">About Press Copyright<br></br>
           Contact us Creators<br></br>

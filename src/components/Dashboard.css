@@ -22,27 +22,10 @@
     color: white;
     font-size: 20px;
     margin-left: 14px;
+    text-decoration: none;
 }
 
-#sub {
-    margin-top: 20px;
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 20px;
-}
 
-#lib {
-    margin-top: 20px;
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 20px;
-}
 
 #his {
     margin-top: 20px;
@@ -52,17 +35,9 @@
     color: white;
     font-size: 20px;
     margin-left: 20px;
+    text-decoration: none;
 }
 
-#watch {
-    margin-top: 20px;
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 20px;
-}
 
 #like {
     margin-top: 20px;
@@ -72,36 +47,18 @@
     color: white;
     font-size: 20px;
     margin-left: 20px;
+    text-decoration: none;
 }
 
 #trend {
-    margin-top: 20px;
+    
     background-color: black;
     border: none;
     border-radius: 5px;
     color: white;
     font-size: 20px;
     margin-left: 20px;
-}
-
-#set {
-    margin-top: 20px;
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 20px;
-}
-
-#rep {
-    margin-top: 20px;
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 20px;
+    text-decoration: none;
 }
 
 #help {
@@ -112,6 +69,7 @@
     color: white;
     font-size: 20px;
     margin-left: 20px;
+    text-decoration: none;
 }
 
 #send {
@@ -122,6 +80,7 @@
     color: white;
     font-size: 20px;
     margin-left: 20px;
+    text-decoration: none;
 }
 
 #about {
