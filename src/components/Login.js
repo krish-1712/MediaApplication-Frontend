@@ -9,6 +9,8 @@ import * as yup from 'yup';
 import { useFormik } from 'formik';
 import jwt_decode from 'jwt-decode';
 import './Login.css';
+import { Link } from 'react-router-dom';
+
 
 const userSchemaValidation = yup.object({
   email: yup.string().email('Invalid email format').required('Email is required'),
@@ -95,9 +97,9 @@ function Login() {
         </Form.Group>
         <Button variant="primary" type="submit" className="sub">
           Submit
-        </Button><br></br><br></br>
-        <a href="/register" className='cred' >Create Account</a><br></br><br></br>
-        <a href="/forgot" className='cred1' >Forgot Password</a>
+        </Button><br></br><br></br> 
+        <Link to="/register">Create Account</Link><br></br><br></br>
+        <Link to="/forgot">Forgot Password</Link><br></br>
 
       </Form>
     </div>
