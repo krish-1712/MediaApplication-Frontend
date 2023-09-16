@@ -10,7 +10,6 @@ import News from './components/News';
 import Movies from './components/Movies';
 import Forgot from './components/Forgot';
 import Password from './components/Password';
-
 export const url = "https://media-application-backend.onrender.com"
 
 
