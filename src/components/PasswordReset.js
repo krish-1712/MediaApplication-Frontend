@@ -30,7 +30,7 @@ const PasswordReset = () => {
       onSubmit: async (values) => {
         try {
           const response = await axios.post(`${url}/users/password`, {
-            email: values.email,
+            email: "",
             password: values.password,
             token: decodedToken
           });
