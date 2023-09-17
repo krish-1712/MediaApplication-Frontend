@@ -1,4 +1,4 @@
-.login-wrapper {
+ .login-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +82,7 @@ p {
 
 
 
-/* Media queries for mobile devices */
+
 @media only screen and (max-width: 767px) {
 
   .email,
@@ -109,7 +109,7 @@ p {
   }
 }
 
-/* Media queries for laptop devices */
+
 @media only screen and (min-width: 1024px) {
   .login-wrapper {
     padding: 40px;
@@ -133,4 +133,9 @@ p {
   .cred1 {
     margin-left: 0;
   }
-}
+} 
+
+
+
+
+

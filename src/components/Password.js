@@ -9,7 +9,7 @@ import * as yup from 'yup'
 import { useFormik } from "formik";
 import './Password.css';
 
-const userSchemaValidation = yup.object({
+const userSchemaValidation = yup.object({ 
   password: yup.string().required("Password is required").min(8),
   newpassword: yup.string().required("Password is required").min(8)
 })
