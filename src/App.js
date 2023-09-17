@@ -9,7 +9,9 @@ import Trend from './components/Trend';
 import News from './components/News';
 import Movies from './components/Movies';
 import Forgot from './components/Forgot';
-import Password from './components/Password';
+import PasswordReset from './components/PasswordReset';
+
+
 export const url = "https://media-application-backend.onrender.com"
 
 
@@ -30,7 +32,12 @@ function App() {
           <Route path='/news' element={<News />} />
           <Route path='/movies' element={<Movies />} />
           <Route path='/forgot' element={<Forgot />} />
-          <Route path='/password' element={<Password />} />
+          <Route path='/password' element={<PasswordReset/>} />
+        
+
+
+
+          
         </Route>
       </Routes>
     </BrowserRouter>
