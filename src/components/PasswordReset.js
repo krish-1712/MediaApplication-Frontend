@@ -22,15 +22,16 @@ const PasswordReset = () => {
     const tokenParam = new URLSearchParams(window.location.search);
     const decodedToken = tokenParam.get('token');
     const { handleSubmit, handleChange, errors, touched, values } = useFormik({
-      initialValues: {
-        password: "",
-        newpassword: "",
-      },
+        initialValues: {
+            email: '', // Add this line
+            password: '',
+            newpassword: '',
+          },
       validationSchema: userSchemaValidation,
       onSubmit: async (values) => {
         try {
           const response = await axios.post(`${url}/users/password`, {
-            email: "",
+            email: values.email,
             password: values.password,
             token: decodedToken
           });
