@@ -100,6 +100,7 @@ function Login() {
         </Button><br></br><br></br> 
         <Link to="/register">Create Account</Link><br></br><br></br>
         <Link to="/forgot">Forgot Password</Link><br></br>
+        <Link to="/password"> Password</Link><br></br>
 
       </Form>
     </div>
