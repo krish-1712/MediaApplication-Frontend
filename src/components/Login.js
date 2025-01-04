@@ -19,10 +19,7 @@ const userSchemaValidation = yup.object({
 
 function Login() {
   let navigate = useNavigate();
-  let token = sessionStorage.getItem('token');
-
-  console.log('Token:', token);
-
+  let token;
   const { handleSubmit, handleChange, errors, touched, values } = useFormik({
     initialValues: {
       email: '',
@@ -37,6 +34,11 @@ function Login() {
         console.log(res.data.user._id)
         sessionStorage.setItem('user', res.data.user._id);
         sessionStorage.setItem('token', res.data.token);
+        console.log(sessionStorage.getItem('token'));
+        const token = sessionStorage.getItem('token');
+        console.log('Token on load:', token);
+
+
         navigate('/home');
       } catch (error) {
         console.log('Error:', error.message);
@@ -44,6 +46,7 @@ function Login() {
       }
     },
   });
+
   useEffect(() => {
     if (token) {
       try {
@@ -67,41 +70,37 @@ function Login() {
 
   return (
     <div className="login-wrapper">
-      <h1 style={{ textAlign: 'center' }}>Login</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" id='wid' >
-          <Form.Label className="add">Email address</Form.Label>
+        <h1>Sign In</h1>
+        <Form.Group className="mb-3">
           <Form.Control
             type="email"
-            placeholder="Enter email address"
-            className="email"
+            placeholder="Email"
             name="email"
             value={values.email}
             onChange={handleChange}
-
           />
           {touched.email && errors.email ? <p style={{ color: 'crimson' }}>{errors.email}</p> : ''}
         </Form.Group>
-        <Form.Group className="mb-3" id='wid' >
-          <Form.Label className="add1">Password</Form.Label>
+        <Form.Group className="mb-3">
           <Form.Control
             type="password"
-            placeholder="Enter the Password"
-            className="password"
+            placeholder="Password"
             name="password"
             value={values.password}
             onChange={handleChange}
-
           />
           {touched.password && errors.password ? <p style={{ color: 'crimson' }}>{errors.password}</p> : ''}
         </Form.Group>
-        <Button variant="primary" type="submit" className="sub">
-          Submit
-        </Button><br></br><br></br> 
-        <Link to="/register">Create Account</Link><br></br><br></br>
-        <Link to="/forgot">Forgot Password</Link><br></br>
-      
-
+        <Button variant="primary" type="submit">
+          Sign In
+        </Button>
+        <div style={{ marginTop: '15px' }}>
+          <Link to="/register">New to our platform? Sign up now.</Link>
+        </div>
+        <div>
+          <Link to="/forgot">Forgot Password?</Link>
+        </div>
       </Form>
     </div>
   );

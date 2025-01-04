@@ -5,7 +5,6 @@ import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
 import { url } from '../App';
 import axios from 'axios';
-
 import './Help.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -43,10 +42,10 @@ function Help() {
 
   return (
     <div className="help-wrapper">
-      <h1 style={{ textAlign: 'center' }}>Help</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" id="luck">
-          <Form.Label className="add">Name</Form.Label>
+
+      <Form onSubmit={handleSubmit} className='page'>
+        <h1 style={{ textAlign: 'center' }}> Help Center</h1>
+        <Form.Group className="mb-3">
           <Form.Control
             type="text"
             placeholder="Enter name"
@@ -57,8 +56,7 @@ function Help() {
           />
           {touched.name && errors.name ? <p style={{ color: 'crimson' }}>{errors.name}</p> : ''}
         </Form.Group>
-        <Form.Group className="mb-3" id="luck">
-          <Form.Label className="add1">Email</Form.Label>
+        <Form.Group className="mb-3">
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -69,8 +67,7 @@ function Help() {
           />
           {touched.email && errors.email ? <p style={{ color: 'crimson' }}>{errors.email}</p> : ''}
         </Form.Group>
-        <Form.Group className="mb-3" id="luck">
-          <Form.Label className="add1">Message</Form.Label>
+        <Form.Group className="mb-3">
           <Form.Control
             as="textarea"
             rows={5}
@@ -91,3 +88,4 @@ function Help() {
 }
 
 export default Help;
+

@@ -1,276 +1,201 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease;
+}
+
+.you {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.you i {
+    color: #e50914;
+    margin-right: 10px;
+}
+
+.nav-links {
+    flex-grow: 1;
+    margin-top: 20px;
+    font-size: 19px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.nav-link:hover {
+    color: #e50914;
+}
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+.footer-links {
+    margin-top: auto;
+    font-size: 12px;
+}
+
+#about {
+    color: #8c8c8c;
+    margin-top: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    z-index: 10;
+}
+
+.logo i {
+    color: #e50914;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav-links-container {
+    display: flex;
+    gap: 20px;
+    color: white;
+    font-size: 19px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-bar {
+    padding: 8px;
+    width: 200px;
+    background-color: #333;
+    border: 1px solid #333;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: white;
+}
+
+.profile-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.profile-icon i {
+    color: #fff;
+    font-size: 25px;
+}
+
+.profile-container i {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .side-bar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 16%;
+    width: 250px;
+    height: 100%;
     background-color: black;
-    overflow-y: auto;
-    z-index: 1;
-}
-
-.dashboard {
+    color: white;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
     display: flex;
-    flex-direction: coloumn;
-
-}
-
-#dash {
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 14px;
-    text-decoration: none;
+    flex-direction: column;
 }
 
 
-
-#his {
+.nav-links {
     margin-top: 20px;
-    background-color: black;
-    border: none;
-    border-radius: 5px;
+}
+
+.nav-link {
     color: white;
-    font-size: 20px;
-    margin-left: 20px;
     text-decoration: none;
+    display: block;
+    margin: 10px 0;
 }
 
+.nav-link i {
+    margin-right: 10px;
+}
 
-#like {
-    margin-top: 20px;
-    background-color: black;
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 20px;
-    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 101;
 }
 
-#trend {
-    
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 20px;
-    text-decoration: none;
+.main-content {
+    margin-left: 240px;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+    flex-grow: 1;
 }
 
-#help {
-    margin-top: 20px;
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 20px;
-    text-decoration: none;
+.main-content.sidebar-closed {
+    margin-left: 0;
 }
 
-#send {
-    margin-top: 20px;
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    margin-left: 20px;
-    text-decoration: none;
-}
-
-#about {
-    margin-top: 20px;
-    font-size: 20px;
-    color: lightgrey;
-}
-
-.you {
-    margin-top: 20px;
-    color: white;
-    margin-left: 5px;
-    font-size: 20px;
-}
-
-
-
-
-.side-bar {
-    border: 1px soli white;
-    height: 400vh;
-    width: 16%;
-    background-color: black;
-
-
-}
-
-.fa-solid {
-    font-size: 20px;
-    color: white;
-    margin-left: 10px;
-}
-
-
-.fa-book {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-film {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-clock {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-fire {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-cog {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-question-circle {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-flag {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-newspaper {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-comment {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-plus-circle {
-    color: lightgray;
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.fa-youtube {
-    color: red;
-    font-size: 25px;
-    margin-left: 10px;
-}
-
-.hr {
-    color: black;
-}
-
-
-/* Styles for mobile devices */
-@media only screen and (max-width: 767px) {
-    .side-bar {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
-
-    .dashboard {
-        flex-direction: column;
-    }
-
-    #dash,
-    #sub,
-    #lib,
-    #his,
-    #watch,
-    #like,
-    #trend,
-    #set,
-    #rep,
-    #help,
-    #send,
-    #about,
-    .you,
-    .fa-solid,
-    .fa-book,
-    .fa-film,
-    .fa-clock,
-    .fa-fire,
-    .fa-cog,
-    .fa-question-circle,
-    .fa-flag,
-    .fa-newspaper,
-    .fa-comment,
-    .fa-plus-circle,
-    .fa-youtube {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-}
-
-/* Styles for laptop devices */
-@media only screen and (min-width: 768px) {
-    .side-bar {
-        position: fixed;
-        top: 0;
+@media screen and (max-width: 768px) {
+    .navbar {
         left: 0;
-        height: 100vh;
-        width: 16%;
-        background-color: black;
-        overflow-y: auto;
-        z-index: 1;
+        width: 100%;
     }
 
     .dashboard {
         flex-direction: column;
     }
 
-    #dash,
-    #sub,
-    #lib,
-    #his,
-    #watch,
-    #like,
-    #trend,
-    #set,
-    #rep,
-    #help,
-    #send,
-    #about,
-    .you,
-    .fa-solid,
-    .fa-book,
-    .fa-film,
-    .fa-clock,
-    .fa-fire,
-    .fa-cog,
-    .fa-question-circle,
-    .fa-flag,
-    .fa-newspaper,
-    .fa-comment,
-    .fa-plus-circle,
-    .fa-youtube {
-        margin-left: 10px;
-        margin-top: 20px;
+    .side-bar {
+        width: 100%;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .banner-content h1 {
+        font-size: 30px;
     }
 }

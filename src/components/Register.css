@@ -1,80 +1,92 @@
-.login-wrapper {
+.register-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.label {
-  font-weight: bold;
+.register-form {
+  width: 370px;
+  background: black;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
-.error {
+.register-form h1 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.register-name-group .register-name-input {
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.register-name-group .register-name-input:focus {
+  color: #181818;
+  border-color: #e50914;
+}
+
+.register-email-group .register-email-input {
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.register-email-group .register-email-input:focus {
+  color: #181818;
+  border-color: #f6121d;
+}
+
+.register-password-group .register-password-input {
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.register-password-group .register-password-input:focus {
+  color: white;
+  border-color: #1db954;
+}
+
+.register-form .form-control {
+  margin-bottom: 10px;
+  height: 45px;
+  font-size: 14px;
+}
+
+.register-error-text {
   color: crimson;
-  margin-top: 0.25rem;
+  font-size: 12px;
+  margin-top: -5px;
 }
 
-.name,
-.email,
-.password {
+.register-button {
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: black !important;
-  color: white !important;
+  height: 45px;
+  background-color: #e50914;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
-button[type="submit"] {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 1rem;
+.register-button:hover {
+  background-color: #f6121d;
 }
 
-.email::placeholder {
-  color: white !important;
+.register-footer {
+  margin-top: 15px;
+  color: #bbb;
 }
 
-.password::placeholder {
-  color: white !important;
-}
-
-.name::placeholder {
-  color: white !important;
-}
-
-/* Media queries for mobile devices */
-@media only screen and (max-width: 767px) {
-  .login-wrapper {
-    padding: 10px;
-  }
-
-  .name,
-  .email,
-  .password {
-    font-size: 14px;
-  }
-
-  button[type="submit"] {
-    font-size: 14px;
-  }
-}
-
-/* Media queries for laptop devices */
-@media only screen and (min-width: 768px) {
-  .login-wrapper {
-    padding: 20px;
-  }
-
-  .name,
-  .email,
-  .password {
-    font-size: 16px;
-  }
-
-  button[type="submit"] {
-    font-size: 16px;
-  }
+.register-footer a {
+  color: #fff;
+  text-decoration: underline;
 }

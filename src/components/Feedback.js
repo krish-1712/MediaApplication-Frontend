@@ -39,10 +39,9 @@ function FeedBack() {
   let navigate = useNavigate();
   return (
     <div className="help-wrapper">
-      <h1 style={{ textAlign: 'center' }}>FeedBack</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" id="luck">
-          <Form.Label className="add">Name</Form.Label>
+        <h1 style={{ textAlign: 'center' }}>Give Us Feedback</h1>
+        <Form.Group className="mb-3">
           <Form.Control
             type="text"
             placeholder="Enter name"
@@ -53,8 +52,7 @@ function FeedBack() {
           />
           {touched.name && errors.name ? <p style={{ color: 'crimson' }}>{errors.name}</p> : ''}
         </Form.Group>
-        <Form.Group className="mb-3" id="luck">
-          <Form.Label className="add1">Email</Form.Label>
+        <Form.Group className="mb-3">
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -65,8 +63,7 @@ function FeedBack() {
           />
           {touched.email && errors.email ? <p style={{ color: 'crimson' }}>{errors.email}</p> : ''}
         </Form.Group>
-        <Form.Group className="mb-3" id="luck">
-          <Form.Label className="add1">Message</Form.Label>
+        <Form.Group className="mb-3">
           <Form.Control
             as="textarea"
             rows={5}
