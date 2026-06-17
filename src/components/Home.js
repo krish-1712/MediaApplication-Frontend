@@ -96,31 +96,27 @@ const Home = () => {
         </div>
       </div>
       <div className="grid-containers">
-        {searchResults.length > 0
-          ? searchResults.map((video, index) => (
-            <div key={video.id || index} className="grid-item">
+        {(searchResults.length > 0 ? searchResults : videos).map((video, index) => (
+          <div key={video.id || index} className="grid-item">
+            <div className="grid-item-thumb">
               <iframe
-                width="100%"
-                height="100%"
                 src={video.videoUrl}
-                title="YouTube video player"
+                title={video.title || 'Video'}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-              ></iframe>
+              />
             </div>
-          ))
-          : videos.map((video, index) => (
-            <div key={video.id || index} className="grid-item">
-              <iframe
-                width="100%"
-                height="100%"
-                src={video.videoUrl}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+            <div className="grid-item-info">
+              <div className="grid-item-channel">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="grid-item-meta">
+                <span className="grid-item-title">{video.title || 'Untitled Video'}</span>
+                <span className="grid-item-sub">StreamHub</span>
+              </div>
             </div>
-          ))}
+          </div>
+        ))}
       </div>
     </Dashboard>
   );

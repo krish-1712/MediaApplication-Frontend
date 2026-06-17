@@ -71,16 +71,21 @@ function Login() {
   return (
     <div className="login-wrapper">
       <Form onSubmit={handleSubmit}>
-        <h1>Sign In</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '28px' }}>
+          <i className="fa-brands fa-youtube" style={{ color: '#e50914', fontSize: '32px' }}></i>
+          <span style={{ color: '#fff', fontSize: '22px', fontWeight: '700', letterSpacing: '-0.5px' }}>StreamVibe</span>
+        </div>
+        <h1>Welcome back</h1>
+        <p className="subtitle">Sign in to continue watching</p>
         <Form.Group className="mb-3">
           <Form.Control
             type="email"
-            placeholder="Email"
+            placeholder="Email address"
             name="email"
             value={values.email}
             onChange={handleChange}
           />
-          {touched.email && errors.email ? <p style={{ color: 'crimson' }}>{errors.email}</p> : ''}
+          {touched.email && errors.email ? <p style={{ color: '#ff4d57', fontSize: '12px', marginTop: '6px' }}>{errors.email}</p> : ''}
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Control
@@ -90,16 +95,14 @@ function Login() {
             value={values.password}
             onChange={handleChange}
           />
-          {touched.password && errors.password ? <p style={{ color: 'crimson' }}>{errors.password}</p> : ''}
+          {touched.password && errors.password ? <p style={{ color: '#ff4d57', fontSize: '12px', marginTop: '6px' }}>{errors.password}</p> : ''}
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Sign In
-        </Button>
-        <div style={{ marginTop: '15px' }}>
-          <Link to="/register">New to our platform? Sign up now.</Link>
+        <div style={{ textAlign: 'right', marginTop: '-10px', marginBottom: '16px' }}>
+          <Link to="/forgot">Forgot password?</Link>
         </div>
-        <div>
-          <Link to="/forgot">Forgot Password?</Link>
+        <Button variant="primary" type="submit">Sign In</Button>
+        <div className="login-footer-links">
+          <span style={{ color: '#666', fontSize: '14px' }}>Don't have an account? <Link to="/register">Sign up</Link></span>
         </div>
       </Form>
     </div>

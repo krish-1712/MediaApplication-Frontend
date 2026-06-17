@@ -1,103 +1,142 @@
-.forgot-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 1536px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.forgot-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
+.forgot-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  background-image:
+    radial-gradient(ellipse at 50% 30%, rgba(229, 9, 20, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(229, 9, 20, 0.06) 0%, transparent 50%);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
 }
 
 .forgot-form {
-  width: 400px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(229, 9, 20, 0.1);
+  display: flex;
+  flex-direction: column;
+}
 
-  padding: 40px;
-  border-radius: 6px;
-
-  text-align: center;
+.forgot-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(229, 9, 20, 0.15);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 24px;
 }
 
 .forgot-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 15px;
+  color: #fff !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+  letter-spacing: -0.5px;
 }
 
 .forgot-subtitle {
-  font-size: 14px;
-  color: #b3b3b3;
-  margin-bottom: 20px;
-  line-height: 1.6;
+  color: #777 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 28px !important;
 }
 
 .forgot-label {
-  font-size: 12px;
-  color: #b3b3b3;
-  text-align: left;
+  color: #aaa !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  margin-bottom: 8px !important;
   display: block;
-  margin-bottom: 5px;
+  letter-spacing: 0.3px;
 }
 
 .forgot-input {
   width: 100%;
-  height: 50px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  font-size: 14px;
-  padding: 10px;
-  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  padding: 14px 16px !important;
+  font-size: 15px !important;
+  transition: all 0.3s ease !important;
+  outline: none;
+  margin-bottom: 6px;
+}
+
+.forgot-input::placeholder {
+  color: #555 !important;
 }
 
 .forgot-input:focus {
-  outline: none;
-  border-color: #555;
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(229, 9, 20, 0.6) !important;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.15) !important;
 }
 
 .forgot-button {
   width: 100%;
-  height: 50px;
-  background-color: #e50914;
-  color: #fff;
+  padding: 14px;
+  background: linear-gradient(135deg, #e50914, #c0070f);
+  border: none;
+  border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 4px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  margin-top: 20px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.4);
 }
 
 .forgot-button:hover {
-  background-color: #f6121d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(229, 9, 20, 0.55);
+  background: linear-gradient(135deg, #ff1a26, #e50914);
 }
 
-.forgot-error {
-  color: #e87c03;
-  font-size: 12px;
-  margin-top: -5px;
-  text-align: left;
+.forgot-button:active {
+  transform: translateY(0);
 }
 
 .forgot-footer {
-  margin-top: 20px;
-  color: #b3b3b3;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.forgot-footer p {
+  margin: 0;
   font-size: 14px;
 }
 
 .forgot-footer a {
-  color: #fff;
-  text-decoration: underline;
-  cursor: pointer;
+  color: #e50914;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .forgot-footer a:hover {
-  text-decoration: none;
+  color: #ff4d57;
 }

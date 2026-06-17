@@ -44,7 +44,12 @@ function Register() {
   return (
     <div className="register-wrapper">
       <Form className="register-form" onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '28px' }}>
+          <i className="fa-brands fa-youtube" style={{ color: '#e50914', fontSize: '32px' }}></i>
+          <span style={{ color: '#fff', fontSize: '22px', fontWeight: '700', letterSpacing: '-0.5px' }}>StreamVibe</span>
+        </div>
+        <h1>Create account</h1>
+        <p style={{ color: '#777', fontSize: '14px', marginBottom: '28px' }}>Join millions of viewers today</p>
         <Form.Group className="mb-3 name-group">
           <Form.Control
             type="text"

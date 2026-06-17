@@ -1,33 +1,185 @@
-@media only screen and (max-width: 767px) {
-
-  .email,
-  .name,
-  .message {
-    width: 100%;
-  }
-
-  .form-group {
-    width: 100%;
-  }
-
-  #luck {
-    width: 100%;
-  }
+* {
+  box-sizing: border-box;
 }
 
-@media only screen and (min-width: 768px) {
+.feedback-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  background-image:
+    radial-gradient(ellipse at 75% 30%, rgba(229, 9, 20, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at 25% 70%, rgba(229, 9, 20, 0.07) 0%, transparent 50%);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+}
 
-  .email,
-  .name,
-  .message {
-    width: 700px;
+.feedback-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 48px 44px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(229, 9, 20, 0.08);
+}
+
+.feedback-header {
+  margin-bottom: 28px;
+}
+
+.feedback-icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(229, 9, 20, 0.15);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.feedback-title {
+  color: #fff !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px !important;
+}
+
+.feedback-subtitle {
+  color: #777;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.feedback-stars {
+  margin-bottom: 28px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+}
+
+.stars-row {
+  display: flex;
+  gap: 8px;
+}
+
+.star {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  line-height: 1;
+}
+
+.star:hover,
+.star-active {
+  color: #e50914;
+  transform: scale(1.15);
+  text-shadow: 0 0 12px rgba(229, 9, 20, 0.6);
+}
+
+/* Shared styles imported from Help.css via class reuse */
+.support-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.support-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.support-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.support-label {
+  color: #aaa !important;
+  font-size: 13px !important;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.support-input.form-control {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  padding: 13px 16px !important;
+  font-size: 15px !important;
+  transition: all 0.3s ease !important;
+  height: auto !important;
+  resize: none;
+}
+
+.support-input.form-control::placeholder {
+  color: #444 !important;
+}
+
+.support-input.form-control:focus {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(229, 9, 20, 0.55) !important;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.12) !important;
+  outline: none !important;
+}
+
+.support-textarea.form-control {
+  min-height: 130px;
+}
+
+.support-error {
+  color: #ff4d57 !important;
+  font-size: 12px !important;
+  margin-top: 5px !important;
+}
+
+.support-btn {
+  width: 100%;
+  padding: 14px !important;
+  background: linear-gradient(135deg, #e50914, #c0070f) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  color: #fff !important;
+  margin-top: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.35) !important;
+}
+
+.support-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(229, 9, 20, 0.55) !important;
+  background: linear-gradient(135deg, #ff1a26, #e50914) !important;
+}
+
+.support-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .feedback-card {
+    padding: 32px 24px;
   }
-
-  .form-group {
-    width: 300px;
+  .support-row {
+    grid-template-columns: 1fr;
   }
-
-  #luck {
-    width: 500px;
+  .star {
+    font-size: 26px;
   }
 }

@@ -54,11 +54,16 @@ const PasswordReset = () => {
     <div className="Password-wrapper">
       <div className="Password-form">
         <Form onSubmit={handleSubmit}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '28px' }}>
+            <i className="fa-brands fa-youtube" style={{ color: '#e50914', fontSize: '32px' }}></i>
+            <span style={{ color: '#fff', fontSize: '22px', fontWeight: '700', letterSpacing: '-0.5px' }}>StreamVibe</span>
+          </div>
           <h1>Reset Password</h1>
+          <p className="form-subtitle">Create a strong new password for your account.</p>
           <Form.Group className="mb-3">
             <Form.Control
               type="password"
-              placeholder="Enter the Password"
+              placeholder="Enter Current Password"
               className="form-control password"
               name="password"
               value={values.password}
@@ -71,7 +76,7 @@ const PasswordReset = () => {
           <Form.Group className="mb-3">
             <Form.Control
               type="password"
-              placeholder="Enter the New Password"
+              placeholder="Confirm New Password"
               className="form-control newpassword"
               id="newpassword"
               name="newpassword"
@@ -84,7 +89,7 @@ const PasswordReset = () => {
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Reset Password
+            Update Password
           </Button>
         </Form>
       </div>
