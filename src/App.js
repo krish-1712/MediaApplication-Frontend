@@ -11,8 +11,8 @@ import Movies from './components/Movies';
 import Forgot from './components/Forgot';
 import PasswordReset from './components/PasswordReset';
 import Upload from './components/Upload';
-// export const url = "https://media-application-backend.onrender.com"
-export const url = "http://localhost:8000"
+export const url = "https://media-application-backend.onrender.com"
+// export const url = "http://localhost:8000"
 
 function App() {
   return (
