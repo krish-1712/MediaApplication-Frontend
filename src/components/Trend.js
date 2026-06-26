@@ -37,11 +37,21 @@ const Trend = () => {
     navigate('/');
   };
 
+  const increaseViewCount = async (videoId) => {
+    try {
+      await axios.put(`${url}/video/views/${videoId}`);
+      // Update local state so views reflect immediately
+      setVideos(prev => prev.map(v =>
+        v._id === videoId ? { ...v, views: (v.views || 0) + 1 } : v
+      ));
+    } catch (error) { console.error('Error increasing view count:', error); }
+  };
+
   const displayVideos = searchQuery && searchResults.length > 0 ? searchResults : videos;
 
   const VideoCard = ({ video, index }) => (
     <div className="trend-card">
-      <span className={`trend-rank ${index < 3 ? 'top3' : ''}`}>{index + 1}</span>
+      <span className={`trend-rank ${index < 3 ? 'top3' : ''}`}>#{index + 1}</span>
       <div className="trend-video-wrapper">
         <iframe
           width="100%" height="195px"
@@ -50,12 +60,15 @@ const Trend = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
-        <div className="trend-video-overlay"><i className="fas fa-play"></i> Watch</div>
+        <div className="trend-video-overlay" onClick={() => increaseViewCount(video._id)}>
+          <i className="fas fa-play"></i> Watch
+        </div>
       </div>
       <div className="trend-info">
         <span className="trend-badge"><i className="fas fa-fire"></i> Trending</span>
         <h3 className="trend-title">{video.title || 'Untitled Video'}</h3>
         <p className="trend-description">{video.desc || 'No description available'}</p>
+        <span className="trend-views"><i className="fas fa-eye"></i> {video.views || 0} views</span>
       </div>
     </div>
   );
@@ -70,6 +83,7 @@ const Trend = () => {
             <Link to="/movies" className="nav-link">Movies</Link>
             <Link to="/news" className="nav-link">News</Link>
             <Link to="/trend" className="nav-link">Trending</Link>
+            <Link to="/upload" className="nav-link">Upload Video</Link>
             <Link to="/help" className="nav-link">Help</Link>
             <Link to="/feedback" className="nav-link">Feedback</Link>
           </div>

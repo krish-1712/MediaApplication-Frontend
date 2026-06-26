@@ -69,6 +69,7 @@ const News = () => {
             <Link to="/movies" className="nav-link">Movies</Link>
             <Link to="/news" className="nav-link">News</Link>
             <Link to="/trend" className="nav-link">Trending</Link>
+            <Link to="/upload" className="nav-link">Upload Video</Link>
             <Link to="/help" className="nav-link">Help</Link>
             <Link to="/feedback" className="nav-link">Feedback</Link>
           </div>

@@ -23,6 +23,7 @@ function Help() {
     onSubmit: async (values, { setSubmitting }) => {
       try {
         const response = await axios.post(`${url}/users/help`, { values });
+        console.log("res", response);
         if (response.status === 200) {
           toast.success(response.data.message);
           resetForm();

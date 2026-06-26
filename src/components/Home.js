@@ -12,6 +12,7 @@ const Home = () => {
   const [videos, setVideos] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [activeVideos, setActiveVideos] = useState(new Set()); // tracks clicked videos
   let navigate = useNavigate();
   useEffect(() => {
     fetchHomeVideos();
@@ -44,6 +45,24 @@ const Home = () => {
       console.error('Error searching videos:', error);
     }
   };
+  const handleVideoClick = async (videoId) => {
+    // Mark this video as active (hide overlay so iframe becomes playable)
+    setActiveVideos(prev => new Set([...prev, videoId]));
+    // Increment view count in local state immediately
+    setVideos(prev => prev.map(v =>
+      v._id === videoId ? { ...v, views: (v.views || 0) + 1 } : v
+    ));
+    setSearchResults(prev => prev.map(v =>
+      v._id === videoId ? { ...v, views: (v.views || 0) + 1 } : v
+    ));
+    // Send to backend
+    try {
+      await axios.put(`${url}/video/views/${videoId}`);
+    } catch (error) {
+      console.error('Error increasing view count:', error);
+    }
+  };
+
   const handleLogout = () => {
     sessionStorage.removeItem('token');
     toast.success('Logout successful');
@@ -62,6 +81,7 @@ const Home = () => {
             <Link to="/movies" className="nav-link">Movies</Link>
             <Link to="/news" className="nav-link">News</Link>
             <Link to="/trend" className="nav-link">Trending</Link>
+            <Link to="/upload" className="nav-link">Upload Video</Link>
             <Link to="/help" className="nav-link">Help</Link>
             <Link to="/feedback" className="nav-link">Feedback</Link>
           </div>
@@ -97,7 +117,7 @@ const Home = () => {
       </div>
       <div className="grid-containers">
         {(searchResults.length > 0 ? searchResults : videos).map((video, index) => (
-          <div key={video.id || index} className="grid-item">
+          <div key={video._id || index} className="grid-item">
             <div className="grid-item-thumb">
               <iframe
                 src={video.videoUrl}
@@ -105,6 +125,18 @@ const Home = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
+              {/* Clickable overlay — sits ON TOP of iframe, disappears after click so video plays */}
+              {!activeVideos.has(video._id) && (
+                <div
+                  className="video-click-overlay"
+                  onClick={() => handleVideoClick(video._id)}
+                  title="Click to play & count view"
+                >
+                  <div className="video-play-btn">
+                    <i className="fas fa-play"></i>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="grid-item-info">
               <div className="grid-item-channel">
@@ -112,7 +144,9 @@ const Home = () => {
               </div>
               <div className="grid-item-meta">
                 <span className="grid-item-title">{video.title || 'Untitled Video'}</span>
-                <span className="grid-item-sub">StreamHub</span>
+                <span className="grid-item-sub">
+                  StreamHub • <i className="fas fa-eye" style={{color:'#e5091480', marginRight: 3}}></i>{video.views || 0} views
+                </span>
               </div>
             </div>
           </div>

@@ -13,18 +13,18 @@
   border-radius: 14px;
   overflow: hidden;
   background: #0e0e1c;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   cursor: pointer;
-  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
-              box-shadow 0.28s ease,
-              border-color 0.28s ease;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
 }
 
 .grid-item:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.7),
-              0 0 0 1px rgba(229,9,20,0.22);
-  border-color: rgba(229,9,20,0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(229, 9, 20, 0.22);
+  border-color: rgba(229, 9, 20, 0.25);
 }
 
 /* iframe wrapper keeps 16:9 ratio */
@@ -44,25 +44,60 @@
   display: block;
 }
 
-/* hover play badge */
+/* hover play badge - now just visual, real click handled by overlay div */
 .grid-item-thumb::after {
-  content: '▶';
+  content: '';
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  color: rgba(255,255,255,0.85);
-  background: rgba(0,0,0,0.38);
+  background: rgba(0, 0, 0, 0.10);
   opacity: 0;
   transition: opacity 0.22s ease;
   pointer-events: none;
-  backdrop-filter: blur(2px);
+  border-radius: 0;
 }
 
 .grid-item:hover .grid-item-thumb::after {
   opacity: 1;
+}
+
+/* Clickable overlay on top of iframe — captures first click */
+.video-click-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.30);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.video-click-overlay:hover {
+  background: rgba(0, 0, 0, 0.50);
+}
+
+.video-play-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(229, 9, 20, 0.90);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(229, 9, 20, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-click-overlay:hover .video-play-btn {
+  transform: scale(1.12);
+  box-shadow: 0 6px 32px rgba(229, 9, 20, 0.75);
+}
+
+.video-play-btn i {
+  color: #fff;
+  font-size: 18px;
+  margin-left: 3px; /* optical center for play icon */
 }
 
 /* card footer */
@@ -78,7 +113,7 @@
   height: 32px;
   border-radius: 50%;
   background: linear-gradient(135deg, #1e1e38, #2a1628);
-  border: 1.5px solid rgba(229,9,20,0.25);
+  border: 1.5px solid rgba(229, 9, 20, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,13 +151,23 @@
 
 /* ── Responsive ── */
 @media (max-width: 1280px) {
-  .grid-containers { grid-template-columns: repeat(3, 1fr); }
+  .grid-containers {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 900px) {
-  .grid-containers { grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 20px 18px; }
+  .grid-containers {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 20px 18px;
+  }
 }
 
 @media (max-width: 560px) {
-  .grid-containers { grid-template-columns: 1fr; gap: 12px; padding: 16px 14px; }
+  .grid-containers {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px 14px;
+  }
 }

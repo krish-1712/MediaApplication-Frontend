@@ -10,8 +10,9 @@ import News from './components/News';
 import Movies from './components/Movies';
 import Forgot from './components/Forgot';
 import PasswordReset from './components/PasswordReset';
-export const url = "https://media-application-backend.onrender.com"
-// export const url="http://localhost:8000"
+import Upload from './components/Upload';
+// export const url = "https://media-application-backend.onrender.com"
+export const url = "http://localhost:8000"
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/movies' element={<Movies />} />
           <Route path='/forgot' element={<Forgot />} />
           <Route path='/password' element={<PasswordReset />} />
+          <Route path='/upload' element={<Upload />} />
         </Route>
       </Routes>
     </BrowserRouter>
