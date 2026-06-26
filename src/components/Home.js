@@ -63,6 +63,13 @@ const Home = () => {
     }
   };
 
+  const getPlayableUrl = (urlStr, isActive) => {
+    if (!urlStr) return '';
+    if (!isActive) return urlStr;
+    const connector = urlStr.includes('?') ? '&' : '?';
+    return `${urlStr}${connector}autoplay=1&mute=0`;
+  };
+
   const handleLogout = () => {
     sessionStorage.removeItem('token');
     toast.success('Logout successful');
@@ -120,7 +127,7 @@ const Home = () => {
           <div key={video._id || index} className="grid-item">
             <div className="grid-item-thumb">
               <iframe
-                src={video.videoUrl}
+                src={getPlayableUrl(video.videoUrl, activeVideos.has(video._id))}
                 title={video.title || 'Video'}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -131,11 +138,7 @@ const Home = () => {
                   className="video-click-overlay"
                   onClick={() => handleVideoClick(video._id)}
                   title="Click to play & count view"
-                >
-                  <div className="video-play-btn">
-                    <i className="fas fa-play"></i>
-                  </div>
-                </div>
+                />
               )}
             </div>
             <div className="grid-item-info">

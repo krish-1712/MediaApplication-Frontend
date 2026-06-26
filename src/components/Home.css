@@ -65,39 +65,8 @@
   position: absolute;
   inset: 0;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.30);
+  background: transparent;
   cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.video-click-overlay:hover {
-  background: rgba(0, 0, 0, 0.50);
-}
-
-.video-play-btn {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(229, 9, 20, 0.90);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 24px rgba(229, 9, 20, 0.55);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.video-click-overlay:hover .video-play-btn {
-  transform: scale(1.12);
-  box-shadow: 0 6px 32px rgba(229, 9, 20, 0.75);
-}
-
-.video-play-btn i {
-  color: #fff;
-  font-size: 18px;
-  margin-left: 3px; /* optical center for play icon */
 }
 
 /* card footer */

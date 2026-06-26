@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './Dashboard.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -5,18 +6,24 @@ import { toast } from 'react-toastify';
 const Dashboard = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
   const isActive = (path) => location.pathname === path;
 
-  const mainNav = [
-    { to: '/home',   emoji: '🏠', label: 'Home'     },
-    { to: '/movies', emoji: '🎬', label: 'Movies'   },
-    { to: '/trend',  emoji: '🔥', label: 'Trending' },
-    { to: '/news',   emoji: '📰', label: 'News'     },
+  const discoverNav = [
+    { to: '/home',   icon: 'fas fa-house', label: 'Home' },
+    { to: '/movies', icon: 'fas fa-film', label: 'Movies' },
+    { to: '/trend',  icon: 'fas fa-fire', label: 'Trending' },
+    { to: '/news',   icon: 'fas fa-newspaper', label: 'News' },
+  ];
+
+  const creatorNav = [
+    { to: '/upload', icon: 'fas fa-cloud-arrow-up', label: 'Upload Video' },
   ];
 
   const supportNav = [
-    { to: '/help',     emoji: '❓', label: 'Help'     },
-    { to: '/feedback', emoji: '💬', label: 'Feedback' },
+    { to: '/help',     icon: 'fas fa-circle-question', label: 'Help' },
+    { to: '/feedback', icon: 'fas fa-comment-dots', label: 'Feedback' },
   ];
 
   const handleLogout = () => {
@@ -25,19 +32,33 @@ const Dashboard = ({ children }) => {
     navigate('/');
   };
 
-  const NavItem = ({ to, emoji, label }) => (
-    <Link to={to} className={`nav-link ${isActive(to) ? 'active' : ''}`}>
-      <span className="nav-emoji">{emoji}</span>
-      <span className="nav-label">{label}</span>
-      <span className="nav-dot"></span>
+  const NavItem = ({ to, icon, label }) => (
+    <Link to={to} className={`sidebar-nav-link ${isActive(to) ? 'active' : ''}`} onClick={() => setIsOpen(false)}>
+      <span className="sidebar-nav-icon-container">
+        <i className={icon}></i>
+      </span>
+      <span className="sidebar-nav-label">{label}</span>
+      <span className="sidebar-nav-dot"></span>
     </Link>
   );
 
   return (
     <div className="dashboard">
-      <aside className="side-bar">
+      {/* Mobile Toggle Button */}
+      <button 
+        className={`mobile-toggle-btn ${isOpen ? 'open' : ''}`} 
+        onClick={() => setIsOpen(!isOpen)} 
+        aria-label="Toggle Sidebar"
+      >
+        <i className={`fas ${isOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+      </button>
 
-        {/* Brand */}
+      {/* Backdrop overlay for closing on click outside (mobile) */}
+      {isOpen && <div className="sidebar-overlay" onClick={() => setIsOpen(false)}></div>}
+
+      <aside className={`side-bar ${isOpen ? 'mobile-open' : ''}`}>
+
+        {/* Brand logo section */}
         <div className="sidebar-brand">
           <div className="brand-logo">
             <i className="fab fa-youtube"></i>
@@ -48,24 +69,31 @@ const Dashboard = ({ children }) => {
           </div>
         </div>
 
-        {/* Main nav */}
-        <p className="nav-category">Discover</p>
-        <nav className="nav-links">
-          {mainNav.map(item => <NavItem key={item.to} {...item} />)}
-        </nav>
+        {/* Navigation Categories */}
+        <div className="sidebar-scroll-container">
+          <p className="sidebar-nav-category">Discover</p>
+          <nav className="sidebar-nav-links">
+            {discoverNav.map(item => <NavItem key={item.to} {...item} />)}
+          </nav>
 
-        {/* Divider */}
-        <div className="nav-divider"></div>
+          <div className="sidebar-nav-divider"></div>
 
-        {/* Support nav */}
-        <p className="nav-category">Support</p>
-        <nav className="nav-links">
-          {supportNav.map(item => <NavItem key={item.to} {...item} />)}
-        </nav>
+          <p className="sidebar-nav-category">Creator</p>
+          <nav className="sidebar-nav-links">
+            {creatorNav.map(item => <NavItem key={item.to} {...item} />)}
+          </nav>
+
+          <div className="sidebar-nav-divider"></div>
+
+          <p className="sidebar-nav-category">Support</p>
+          <nav className="sidebar-nav-links">
+            {supportNav.map(item => <NavItem key={item.to} {...item} />)}
+          </nav>
+        </div>
 
         <div className="sidebar-spacer"></div>
 
-        {/* User dock */}
+        {/* User profile dock */}
         <div className="sidebar-user-card">
           <div className="user-avatar">
             <i className="fas fa-user"></i>
@@ -88,3 +116,4 @@ const Dashboard = ({ children }) => {
 };
 
 export default Dashboard;
+
