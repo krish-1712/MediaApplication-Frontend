@@ -601,9 +601,6 @@ body {
 }
 
 
-/* ════════════════════════════════════════════════════════════════
-   NAVBAR (preserved)
-════════════════════════════════════════════════════════════════ */
 .navbar {
   position: fixed;
   top: 0;
@@ -675,9 +672,7 @@ body {
 
 .nav-links-container .nav-link.active {
   color: #fff;
-  background: var(--red);
   font-weight: 600;
-  box-shadow: 0 3px 14px var(--glow);
   border: none;
   transform: none;
 }
